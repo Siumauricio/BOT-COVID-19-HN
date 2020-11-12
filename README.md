@@ -5,7 +5,7 @@ This was achieved using Telegram's platform and with the useful service of bots,
 </p>
 
 ## Run
-<p align="justify">1.cd Bot <br/>  2.dotnet run  <br/>  3.Test in t.me/COVID_19_HN_BOT
+<p align="justify">1.Cd Bot <br/>  2.Dotnet run  <br/>  3.Test in t.me/COVID_19_HN_BOT
 </p>
 
 
