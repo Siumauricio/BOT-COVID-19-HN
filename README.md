@@ -6,19 +6,19 @@ This was achieved using Telegram's platform and with the useful service of bots,
 </p>
 
 ## Technologies & Tools 🧰
-![](https://img.shields.io/badge/Framework-.NET Core-red)
+![](https://img.shields.io/badge/Framework-.Net%20Core-red)
 
 ![](https://img.shields.io/badge/OS-Linux-brightgreen)
 
 ![](https://img.shields.io/badge/Editor-VSCode-yellow)
 
-![](https://img.shields.io/badge/Code-C#-blue)
+![](https://img.shields.io/badge/Code-C%23-blue)
 
 ## Contact
 <p> The group that made this project come to life is: <br>
-* [Github] https://github.com/jcueva1109
-* [Github] https://github.com/Siumauricio
-* [Github] https://github.com/JohnnieMiralda
+* :octocat: https://github.com/jcueva1109
+* :octocat: https://github.com/Siumauricio
+* :octocat: https://github.com/JohnnieMiralda
 </p>
 
 <p align="center">Made with ❤️ by Grupo #2 </p>
