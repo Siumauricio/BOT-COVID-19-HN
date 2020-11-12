@@ -5,7 +5,7 @@ This was achieved using Telegram's platform and with the useful service of bots,
 </p>
 
 ## Technologies & Tools 🧰
-![](https://img.shields.io/badge/Framework-.Net%20Core-red)|
+![](https://img.shields.io/badge/Framework-.Net%20Core-red)
 ![](https://img.shields.io/badge/OS-Linux-brightgreen)
 ![](https://img.shields.io/badge/Editor-VSCode-yellow)
 ![](https://img.shields.io/badge/Code-C%23-blue)
