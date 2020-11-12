@@ -4,6 +4,14 @@
 This was achieved using Telegram's platform and with the useful service of bots, which can be fully operable 24/7. It is our class project for Ingenieria de Software 1. We are group #2. Contributors down below. Enjoy!
 </p>
 
+##Run
+<p align="justify">
+  1.cd Bot
+  2.dotnet run
+  3.Test in t.me/COVID_19_HN_BOT
+</p>
+
+
 ## Technologies & Tools 🧰
 ![](https://img.shields.io/badge/Framework-.Net%20Core-red)
 ![](https://img.shields.io/badge/OS-Linux-brightgreen)
