@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj": {}
+    "/home/jcueva/Local_Documentos/Bot-COVID19/Bot/Bot.csproj": {}
   },
   "projects": {
-    "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj": {
+    "/home/jcueva/Local_Documentos/Bot-COVID19/Bot/Bot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj",
+        "projectUniqueName": "/home/jcueva/Local_Documentos/Bot-COVID19/Bot/Bot.csproj",
         "projectName": "Bot",
-        "projectPath": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj",
+        "projectPath": "/home/jcueva/Local_Documentos/Bot-COVID19/Bot/Bot.csproj",
         "packagesPath": "/home/jcueva/.nuget/packages/",
-        "outputPath": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/obj/",
+        "outputPath": "/home/jcueva/Local_Documentos/Bot-COVID19/Bot/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/jcueva/.nuget/NuGet/NuGet.Config"
