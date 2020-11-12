@@ -12,10 +12,11 @@ This was achieved using Telegram's platform and with the useful service of bots,
 
 ## Contact
 The group that made this project come to life is: <br>
-:octocat: [Jesus Cueva](https://github.com/jcueva1109 "Jesus Cueva Github Profile") <br>
 :octocat: [Mauricio Siu](https://github.com/Siumauricio "Mauricio Siu Github Profile") <br>
+:octocat: [Jesus Cueva](https://github.com/jcueva1109 "Jesus Cueva Github Profile") <br>
 :octocat: [Johnnie Miralda](https://github.com/JohnnieMiralda "Johnnie Miralda Github Profile") <br>
-:octocat: [Andres Lopez](https://github.com/Landres20 "Andres Lopez") <br>
-
+:octocat: [Andres Lopez](https://github.com/Landres20 "Andres Lopez Github Profile") <br>
+:octocat: [Hector Tabora](https://github.com/hectam "Hector Tabora Github Profile") <br>
+:octocat: [Isaac David](https://github.com/isaacdvid1596 "Isaac David Github Profile") <br>
 
 <p align="center">Made with ❤️ by Group #2 </p>
