@@ -11,12 +11,11 @@ This was achieved using Telegram's platform and with the useful service of bots,
 ![](https://img.shields.io/badge/Code-C%23-blue)
 
 ## Contact
-<p> The group that made this project come to life is: <br>
+The group that made this project come to life is: <br>
 :octocat: [Github](https://github.com/jcueva1109 "Jesus Cueva") <br>
 :octocat: [Github](https://github.com/Siumauricio "Mauricio Siu") <br>
 :octocat: [Github](https://github.com/JohnnieMiralda "Johnnie Miralda") <br>
 :octocat: [Github](https://github.com/Landres20 "Andres Lopez") <br>
 
-</p>
 
 <p align="center">Made with ❤️ by Group #2 </p>
