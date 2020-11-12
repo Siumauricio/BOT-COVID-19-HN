@@ -1,6 +1,6 @@
 # Hello There! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
 
-<p>This project is about creating a Telegram bot about the Coronavirus pandemic, COVID-19, that is currently affecting people around the globe. The goal of this project is to have a platform where people can access information in real time, making it simple, fast, and user friendly. 
+<p align="justify">This project is about creating a Telegram bot about the Coronavirus pandemic, COVID-19, that is currently affecting people around the globe. The goal of this project is to have a platform where people can access information in real time, making it simple, fast, and user friendly. 
 This was achieved using Telegram's platform and with the useful service of bots, which can be fully operable 24/7. It is our class project for Ingenieria de Software 1. We are group #2. Contributors down below. Enjoy!
 </p>
 
@@ -12,10 +12,10 @@ This was achieved using Telegram's platform and with the useful service of bots,
 
 ## Contact
 The group that made this project come to life is: <br>
-:octocat: [Github](https://github.com/jcueva1109 "Jesus Cueva") <br>
-:octocat: [Github](https://github.com/Siumauricio "Mauricio Siu") <br>
-:octocat: [Github](https://github.com/JohnnieMiralda "Johnnie Miralda") <br>
-:octocat: [Github](https://github.com/Landres20 "Andres Lopez") <br>
+:octocat: [Jesus Cueva](https://github.com/jcueva1109 "Jesus Cueva Github Profile") <br>
+:octocat: [Mauricio Siu](https://github.com/Siumauricio "Mauricio Siu Github Profile") <br>
+:octocat: [Johnnie Miralda](https://github.com/JohnnieMiralda "Johnnie Miralda Github Profile") <br>
+:octocat: [Andres Lopez](https://github.com/Landres20 "Andres Lopez") <br>
 
 
 <p align="center">Made with ❤️ by Group #2 </p>
