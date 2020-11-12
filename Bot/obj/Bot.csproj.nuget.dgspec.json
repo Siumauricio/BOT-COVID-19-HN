@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj": {}
+  },
+  "projects": {
+    "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj",
+        "projectName": "Bot",
+        "projectPath": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/Bot.csproj",
+        "packagesPath": "/home/jcueva/.nuget/packages/",
+        "outputPath": "/home/jcueva/Local_Documentos/BOT-COVID-19-HN/Bot/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/jcueva/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[15.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
