@@ -93,12 +93,22 @@ namespace Awesome
             }
 
 
-
-
-            if (callbackQuery.Data == "Circulacion")
+            if(callbackQuery.Data == "EInter")
             {
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "https://news.google.com/covid19/map?hl=es-419&gl=US&ceid=US%3Aes-419");
+            }
+            else if (callbackQuery.Data == "ENac")
+            {
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "https://covid19honduras.org/");
+            }
 
-                DiaCirculacionAsync(callbackQuery);
+
+            if (callbackQuery.Data == "Estadisticas")
+            {
+                EstadisticaAsync(callbackQuery);
+
+            } else if (callbackQuery.Data == "Circulacion") { 
+                 DiaCirculacionAsync(callbackQuery);
 
             }
             else if (callbackQuery.Data == "AutoEvaluate")
@@ -149,7 +159,22 @@ namespace Awesome
             }
 
         }
+        static async void EstadisticaAsync(CallbackQuery callbackQuery)
+        {
 
+
+            var Estadisticas = new InlineKeyboardMarkup(new[]{
+              new []{
+                InlineKeyboardButton.WithCallbackData(
+                  text:"Estadisticas Internacionales",
+                  callbackData: "EInter"),
+                  InlineKeyboardButton.WithCallbackData(
+                    text:"Estadisticas Nacionales",
+                    callbackData: "ENac")
+              }
+              });
+            await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "¿Que desea ver?", replyMarkup: Estadisticas);
+        }
         static async void DiaCirculacionAsync(CallbackQuery callbackQuery)
         {
 
@@ -447,12 +472,9 @@ namespace Awesome
                     callbackData: "AutoEvaluate")
               },
               new []{
-                InlineKeyboardButton.WithUrl(
-                  text:"Estadísticas",
-                  url: "https://www.google.com/search?q=coronavirus+statistics&oq=coronavirus+st&aqs=chrome.0.0i67j69i57j0l6.6211j0j4&sourceid=chrome&ie=UTF-8"),
                 InlineKeyboardButton.WithCallbackData(
-                  text:"Prevenir COVID-19",
-                  callbackData: "prevenir")
+                  text:"Estadísticas",
+                  callbackData: "Estadisticas")
               },
               new[]{
                 InlineKeyboardButton.WithCallbackData(
