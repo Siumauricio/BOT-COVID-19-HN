@@ -3,11 +3,21 @@ using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.ReplyMarkups;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace Awesome
 {
+  static class Cont
+    {
+        // global int
+        public static int porCovid=0;
+    }
     class Program
     {
+
+        static readonly HttpClient client = new HttpClient();
+
         static ITelegramBotClient botClient;
         static void Main()
         {
@@ -43,55 +53,164 @@ namespace Awesome
 
             Console.WriteLine($"botCliente>> El usuario selecciono {callbackQuery.Data}");
 
-            if(callbackQuery.Data=="bien1"|| callbackQuery.Data == "mal1")
+          if(callbackQuery.Data=="bien1"|| callbackQuery.Data == "mal1")
             {
+                Cont.porCovid = 0;
+                if(callbackQuery.Data == "mal1")
+                {
+                    Cont.porCovid += 1;
+                }
                 SegundaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si2" || callbackQuery.Data == "si2")
+            else if (callbackQuery.Data == "si2" || callbackQuery.Data == "no2")
             {
+                if (callbackQuery.Data == "si2")
+                {
+                    Cont.porCovid += 1;
+                }
                 TerceraPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si3" || callbackQuery.Data == "si3")
+            else if (callbackQuery.Data == "si3" || callbackQuery.Data == "no3")
             {
+                if (callbackQuery.Data == "si3")
+                {
+                    Cont.porCovid += 1;
+                }
                 CuartaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si4" || callbackQuery.Data == "si4")
+            else if (callbackQuery.Data == "si4" || callbackQuery.Data == "no4")
             {
+                if (callbackQuery.Data == "si4")
+                {
+                    Cont.porCovid += 1;
+                }
                 QuintaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si5" || callbackQuery.Data == "si5")
+            else if (callbackQuery.Data == "si5" || callbackQuery.Data == "no5")
             {
+                if (callbackQuery.Data == "si5")
+                {
+                    Cont.porCovid += 1;
+                }
                 SextaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si6" || callbackQuery.Data == "si6")
+            else if (callbackQuery.Data == "si6" || callbackQuery.Data == "no6")
             {
+                if (callbackQuery.Data == "si6")
+                {
+                    Cont.porCovid += 1;
+                }
                 SeptimaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si7" || callbackQuery.Data == "si7")
+            else if (callbackQuery.Data == "si7" || callbackQuery.Data == "no7")
             {
+                if (callbackQuery.Data == "si7")
+                {
+                    Cont.porCovid += 1;
+                }
                 OctavaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si8" || callbackQuery.Data == "si8")
+            else if (callbackQuery.Data == "si8" || callbackQuery.Data == "no8")
             {
+                if (callbackQuery.Data == "si8")
+                {
+                    Cont.porCovid += 1;
+                }
                 NovenaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si9" || callbackQuery.Data == "si9")
+            else if (callbackQuery.Data == "si9" || callbackQuery.Data == "no9")
             {
+                if (callbackQuery.Data == "si9")
+                {
+                    Cont.porCovid += 1;
+                }
                 DecimaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si10" || callbackQuery.Data == "si10")
+            else if (callbackQuery.Data == "si10" || callbackQuery.Data == "no10")
             {
+                if (callbackQuery.Data == "si10")
+                {
+                    Cont.porCovid += 1;
+                }
                 OnceavaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si11" || callbackQuery.Data == "si11")
+            else if (callbackQuery.Data == "si11" || callbackQuery.Data == "no11")
             {
+                if (callbackQuery.Data == "si11")
+                {
+                    Cont.porCovid += 1;
+                }
                 DoceavaPregunta(callbackQuery);
             }
-            else if (callbackQuery.Data == "si12" || callbackQuery.Data == "si12")
+            else if (callbackQuery.Data == "si12" || callbackQuery.Data == "no12")
             {
-              await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "Gracias por responder este cuestionario \nEscriba \\start para volver al menu");
+                if (callbackQuery.Data == "si12")
+                {
+                    Cont.porCovid += 1;
+                }
+                Console.WriteLine(Cont.porCovid);
+                float porcentaje = (Cont.porCovid *100)/12f;
+                Console.WriteLine(porcentaje);
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "La Probabilidad de COVID-19 es : " + porcentaje+"%");
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "Gracias por responder este cuestionario \nEscriba /start para volver al menu");
             }
 
+
+            if(callbackQuery.Data == "EInter")
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("https://api.covid19api.com/summary");
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    dynamic obj = JsonConvert.DeserializeObject(responseBody);
+                    await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, 
+                        "Estadisticas Internacionales"+
+                        "\nNuevos Casos Confirmados: "+obj.Global.NewConfirmed+
+                        "\nTotal Casos Confirmados: "+ obj.Global.TotalConfirmed+
+                        "\nNuevos Muertos: "+obj.Global.NewDeaths+
+                        "\nTotal Muertos: "+ obj.Global.TotalDeaths+
+                        "\nNuevos Recuperados: "+ obj.Global.NewRecovered+
+                        "\nTotal Recuperados: "+ obj.Global.TotalRecovered);
+                }
+                catch (HttpRequestException e)
+                {
+                    Console.WriteLine("\nException Caught!");
+                    Console.WriteLine("Message :{0} ", e.Message);
+                }
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "https://news.google.com/covid19/map?hl=es-419&gl=US&ceid=US%3Aes-419");
+            }
+            else if (callbackQuery.Data == "ENac")
+            {
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("https://api.covid19api.com/summary");
+                    response.EnsureSuccessStatusCode();
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    dynamic obj = JsonConvert.DeserializeObject(responseBody);
+                    await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, 
+                        "Estadisticas Nacionales" + 
+                        "\nNuevos Casos Confirmados: " + obj.Countries[73].NewConfirmed +
+                        "\nTotal Casos Confirmados: " + obj.Countries[73].TotalConfirmed +
+                        "\nNuevos Muertos: " + obj.Countries[73].NewDeaths +
+                        "\nTotal Muertos: " + obj.Countries[73].TotalDeaths +
+                        "\nNuevos Recuperados: " + obj.Countries[73].NewRecovered +
+                        "\nTotal Recuperados: " + obj.Countries[73].TotalRecovered);
+
+                }
+                catch (HttpRequestException e)
+                {
+                    Console.WriteLine("\nException Caught!");
+                    Console.WriteLine("Message :{0} ", e.Message);
+                }
+                await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "https://covid19honduras.org/");
+            }
+
+
+            if (callbackQuery.Data == "Estadisticas")
+            {
+                EstadisticaAsync(callbackQuery);
+            }
 
 
 
@@ -149,7 +268,22 @@ namespace Awesome
             }
 
         }
+        static async void EstadisticaAsync(CallbackQuery callbackQuery)
+        {
 
+
+            var Estadisticas = new InlineKeyboardMarkup(new[]{
+              new []{
+                InlineKeyboardButton.WithCallbackData(
+                  text:"Internacionales",
+                  callbackData: "EInter"),
+                  InlineKeyboardButton.WithCallbackData(
+                    text:"Nacionales",
+                    callbackData: "ENac")
+              }
+              });
+            await botClient.SendTextMessageAsync(callbackQuery.Message.Chat.Id, "¿Que desea ver?", replyMarkup: Estadisticas);
+        }
         static async void DiaCirculacionAsync(CallbackQuery callbackQuery)
         {
 
@@ -445,14 +579,11 @@ namespace Awesome
                   InlineKeyboardButton.WithCallbackData(
                     text:"Auto Evaluate",
                     callbackData: "AutoEvaluate")
-              },
-              new []{
-                InlineKeyboardButton.WithUrl(
-                  text:"Estadísticas",
-                  url: "https://www.google.com/search?q=coronavirus+statistics&oq=coronavirus+st&aqs=chrome.0.0i67j69i57j0l6.6211j0j4&sourceid=chrome&ie=UTF-8"),
+              }, 
+               new []{
                 InlineKeyboardButton.WithCallbackData(
-                  text:"Prevenir COVID-19",
-                  callbackData: "prevenir")
+                  text:"Estadísticas",
+                  callbackData: "Estadisticas")
               },
               new[]{
                 InlineKeyboardButton.WithCallbackData(
