@@ -8,6 +8,11 @@ using Telegram.Bot.Types.ReplyMarkups;
 
 namespace Awesome
 {
+    static class Cont
+    {
+        // global int
+        public static int porCovid=0;
+    }
     class Program
     {
         static readonly HttpClient client = new HttpClient();
