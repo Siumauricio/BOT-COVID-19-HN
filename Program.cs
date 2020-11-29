@@ -212,7 +212,23 @@ namespace Awesome
                 EstadisticaAsync(callbackQuery);
             }
 
+           else if (callbackQuery.Data == "prevenir")
+            {
 
+                await botClient.SendTextMessageAsync(
+                  chatId: callbackQuery.Message.Chat.Id,
+                  text: "Consejos para prevenir COVID-19\n" +
+                        "1. Utiliza constantemente alcohol en gel\n" +
+                        "2. Toma abundante agua y cuida tu alimentación para que mantengas tu sistema inmunologico fortalecido\n" +
+                        "3. Si tienes algún sintoma busca un medio y comunicate con tu supervisor\n" +
+                        "4. No saludes de mano o beso a las personas\n" +
+                        "5. Lávate las manos frecuentemente con agua y jabón\n" +
+                        "6. Limpia y desinfecta las superficies y objetos de uso común\n" +
+                        "7. Evita tocar tus ojos, nariz y boca sin haberte lavado las manos\n" +
+                        "8. Cubre tu nariz y boca con el antebrazo o con un pañuelo desechable al estornudar o toser"
+                );
+
+            }
 
             if (callbackQuery.Data == "Circulacion")
             {
@@ -583,7 +599,10 @@ namespace Awesome
                new []{
                 InlineKeyboardButton.WithCallbackData(
                   text:"Estadísticas",
-                  callbackData: "Estadisticas")
+                  callbackData: "Estadisticas"),
+                  InlineKeyboardButton.WithCallbackData(
+                  text:"Prevenir COVID-19",
+                  callbackData: "prevenir")
               },
               new[]{
                 InlineKeyboardButton.WithCallbackData(
